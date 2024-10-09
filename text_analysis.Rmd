@@ -1,12 +1,18 @@
+---
+title: "XX"
+author: "Your Name"
+date: "2024-10-XX"
+output: "github_document"
+---
+
+
 ```{r}
-install.packages("haven")
-install.packages("quanteda")
-install.packages("quanteda.textplots")
+
 library(haven)
 library(quanteda)
 library(quanteda.textplots)
 
-rep_text <- read_csv("/Users/Colin/Downloads/rep_text.csv")
+rep_text <- read.csv("C:/Users/Colin/Downloads/rep_text.csv")
 
 
 ```
