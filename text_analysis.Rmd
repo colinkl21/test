@@ -1,0 +1,31 @@
+```{r}
+install.packages("haven")
+install.packages("quanteda")
+install.packages("quanteda.textplots")
+library(haven)
+library(quanteda)
+library(quanteda.textplots)
+
+rep_text <- read_csv("/Users/Colin/Downloads/rep_text.csv")
+
+
+```
+
+```{r}
+
+corp = corpus(rep_text, text_field = "identity")
+
+corp
+
+dtm =dfm(tokens(corp))
+
+dict <- dictionary(list(race = c('race','black','white','african*','Asian', 'South American', 'Indian', 'Hispanic', 'People of color', 'Turkish', 'South Asian')))
+
+dict_dtm <- dfm_lookup(dtm, dict, exclusive=TRUE)
+dict_dtm 
+
+textplot_wordcloud(dict_dtm)
+
+
+```
+
